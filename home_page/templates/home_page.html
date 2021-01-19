@@ -1,0 +1,80 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'דף הבית' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('home_page.static', filename='css/home_page.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('photo_title.static', filename='css/photo_title.css') }}"/>
+    <script src="{{ url_for('home_page.static', filename='js/home_page.js') }}"></script>
+{% endblock %}
+
+
+
+{% block page_body_main_content %}
+    <div class="slideshow-container">
+        <div class="title"><div class="bg-text">הבנות שלנו</div></div>
+
+        <div class="mySlides" >
+            <div class="gallery1">
+                <a  href="/group1/pages/closet/templates/closet1.html"><img src="/group1/pages/home_page/static/img/michal.jpeg" alt="Michal Levy" ></a>
+                <p class="desc">Michal Levy </p>
+            </div>
+            <div class="gallery1">
+                <a  href="/group1/pages/closet/templates/closet2.html"><img src="/group1/pages/home_page/static/img/roni.jpeg" alt="Roni Rabinovich" ></a>
+                <p class="desc">Roni Rabinovich </p>
+            </div>
+            <div class="gallery1">
+                <a  href="/group1/pages/closet/templates/closet3.html"><img src="/group1/pages/home_page/static/img/danielle.jpeg" alt="Danielle Kazantini" ></a>
+                <p class="desc">Danielle Kazantini </p>
+            </div>
+
+            <a class="prev" onclick="plusSlides(-1)"><</a>
+            <a class="next" onclick="plusSlides(1)">></a>
+
+            <div class="gallery1">
+                <a  href="/group1/pages/closet/templates/closet4.html"> <img src="/group1/pages/home_page/static/img/yarden.jpeg" alt="Yarden Hochenberg" ></a>
+                <p class="desc">Yarden Hochenberg </p>
+            </div>
+            <div class="gallery1">
+                <a  href="/group1/pages/closet/templates/closet1.html">  <img src="/group1/pages/home_page/static/img/maya.jpeg" alt="Maya Dvash" ></a>
+                <p class="desc">Maya Dvash </p>
+            </div>
+            <div class="gallery1">
+                <a  href="/group1/pages/closet/templates/closet1.html">  <img src="/group1/pages/home_page/static/img/hadar.jpeg" alt="Hadar Greener" ></a>
+                <p class="desc">Hadar Greener </p>
+                </div>
+            </div>
+            <div class="mySlides" style="display: none;">
+                <div class="gallery1">
+                    <a  href="/group1/pages/closet/templates/closet1.html"> <img src="/group1/pages/home_page/static/img/ori.jpeg" alt="Ori Klier" ></a>
+                    <p class="desc">Ori Klier</p>
+                </div>
+                <div class="gallery1">
+                    <a  href="/group1/pages/closet/templates/closet1.html">  <img src="/group1/pages/home_page/static/img/dar.jpeg" alt="Dar Pelta" ></a>
+                    <p class="desc">Dar Pelta </p>
+                </div>
+                <div class="gallery1">
+                    <a  href="/group1/pages/closet/templates/closet1.html">  <img src="/group1/pages/home_page/static/img/lian.jpeg" alt="Lian Simon" ></a>
+                    <p class="desc">Lian Simon </p>
+                </div>
+
+                <a class="prev" onclick="plusSlides(-1)"><</a>
+                <a class="next" onclick="plusSlides(1)">></a>
+
+                <div class="gallery1">
+                    <a  href="/group1/pages/closet/templates/closet1.html"> <img src="/group1/pages/home_page/static/img/sapir.jpeg" alt="Sappir Gali" ></a>
+                    <p class="desc">Sappir Gali </p>
+                </div>
+                <div class="gallery1">
+                    <a  href="/group1/pages/closet/templates/closet1.html">  <img src="/group1/pages/home_page/static/img/omer.jpeg" alt="Omer Yakobi" ></a>
+                    <p class="desc">Omer Yakobi </p>
+                </div>
+                <div class="gallery1">
+                    <a  href="/group1/pages/closet/templates/closet1.html">  <img src="/group1/pages/home_page/static/img/dorin.jpeg" alt="Dorin Torjeman" ></a>
+                    <p class="desc">Dorin Torjeman </p>
+                    </div>
+                </div>
+
+        </div>
+
+        </div>
+{% endblock %}
