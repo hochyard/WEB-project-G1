@@ -1,0 +1,65 @@
+{% extends 'base.html' %}
+
+{% set page_head_title = 'Product' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('product.static', filename='css/product.css') }}"/>
+     <script src="{{ url_for('product.static', filename='js/product.js') }}"></script>
+{% endblock %}
+{% block page_body_main_content %}
+            <div class= container>
+                <div class="product-page">
+                    <div class="photoContainer">
+                        <div class="mySlides">
+                            <img src="/group1/pages/products/static/img/טופ1.JPG" style="width:100%">
+                        </div>
+                        <div class="mySlides" style="display: none;" >
+                            <img src="/group1/pages/products/static/img/טופ2.JPG" style="width:100%" >
+                        </div>
+                        <div class="mySlides" style="display: none;" >
+                             <img src="/group1/pages/products/static/img/טופ3.JPG" style="width:100%">
+                        </div>
+                        <div class="row">
+                            <div class="column">
+                                <img class="product-page-photos" src="/group1/pages/products/static/img/טופ1.JPG" style="width:108%" onclick="currentSlide(1)" alt="1 אוברול">
+                            </div>
+                            <div class="column">
+                                <img class="product-page-photos" src="/group1/pages/products/static/img/טופ2.JPG" style="width:108%" onclick="currentSlide(2)" alt="2 אוברול">
+                            </div>
+                            <div class="column">
+                                <img class="product-page-photos" src="/group1/pages/products/static/img/טופ3.JPG" style="width:108%" onclick="currentSlide(3)" alt="3 אוברול">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="discription">
+
+                    <h2>    טופ ספורט נייק     </h2>
+                        <b>נמכר ע"י :</b>   Roni Rabinovich
+                        <br>
+                        <b>מותג:</b> NIKE
+                        <br>
+                        <b>מידה:</b> L
+                        <br>
+                        <b> סוג בד :</b> לייקרה 70%
+                        <br><br>
+                        70 ש"ח
+                            <br><br>
+
+                        <button class="add-to-cart" type="button" onclick="addMesage()">הוסף לסל</button>
+
+                    </div>
+                </div>
+            </div>
+
+            <div class=more>
+                <h2>אולי תאהבי גם... </h2>
+                <br>
+                <div class= slott> <a href="/group1/pages/products/templates/product_dani4.html" ><img class=also src="/group1/pages/products/static/img/מגפון1.JPG" style="width:100%" ></a><b>מגפון שחור</b></div>
+                <div class= slott> <a href="/group1/pages/products/templates/product_yarden2.html" ><img class=also src="/group1/pages/products/static/img/חצאית נחש3.JPG" style="width:100%" ></a><b>חצאית נחש</b></div>
+                <div class= slott> <a href="/group1/pages/products/templates//product_roni1.html" ><img class=also src="/group1/pages/products/static/img/גינס2.JPG" style="width:100%" ></a><b>ג'ינס בהיר</b></div>
+                <div class= slott> <a href="/group1/pages/products/templates//product_roni3.html" ><img class=also src="/group1/pages/products/static/img/טופ2.JPG" style="width:100%" ></a><b>טופ ספורט</b></div>
+                <div class= slott><a href="/group1/pages/products/templates/product_michal3.html" ><img class=also src="/group1/pages/products/static/img/עקב1.jpeg" style="width:100%" ></a> <b>נעלי עקב</b></div>
+                <div class= slott><a href="/group1/pages/products/templates/product_dani2.html" ><img class=also src="/group1/pages/products/static/img/גומיה3.JPG" style="width:100%" ></a><b>גומיה אופנתית</b> </div>
+
+            </div>
+{% endblock %}
