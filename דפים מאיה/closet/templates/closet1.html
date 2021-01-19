@@ -1,0 +1,51 @@
+{% extends '../../../templates/base.html' %}
+
+{% set page_head_title = 'closet' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('closet.static', filename='css/closet1.css') }}"/>
+    <script src="{{ url_for('closet.static', filename='js/closet.js') }}"></script>
+{% endblock %}
+
+{% block page_body_main_content %}
+      <div class="headpic">
+        <img src="/group1/pages/closet/static/img/michal.jpeg" alt="Michal Levy"  ><br>
+        <a  class="desc" > <b> Michal Levy's Closet</b> </a>
+        <div class=" aboutme">
+          היי אהובות.
+          <br>
+          מזמינה אותכן להנות מפריטים שווים במחירים עוד יותר שווים
+          <br>
+          זמינה אליכן לכל שאלה למטה אז תרגישו חופשי לפנות! 
+        </div>
+      </div>
+      <br>
+      <div class="big-container">
+        <div class="container">
+          <div class="closet1">
+            <div class="hi">
+              <img class="like" src="/group1/pages/closet/static/img/favorite.png" alt="like" onclick="this.src='/group1/pages/closet/static/img/favorite_black.png'; addMesage()">
+              <a href="/group1/pages/products/templates/product_michal1.html">
+              <img class="mainPic" src="/group1/pages/closet/static/img/black.jpg" alt="black"></a>
+            </div>
+            <p  class="desc">אוברול שחור &nbsp 100 ש"ח </p>  
+          </div>
+          <div class="closet1">
+            <div class="hi">
+              <img class="like" src="/group1/pages/closet/static/img/favorite.png" alt="like" onclick="this.src='/group1/pages/closet/static/img/favorite_black.png'; addMesage()">
+              <a href="/group1/pages/products/templates/product_michal2.html">
+              <img class="mainPic" src="/group1/pages/closet/static/img/shoes.jpg" alt="shoes" > </a>
+            </div>
+            <p  class="desc" >נעלי עקב ברונזה&nbsp  60 ש"ח </p>  
+          </div>
+          <div class="closet1">
+            <div class="hi">
+              <img class="like" src="/group1/pages/closet/static/img/favorite.png" alt="like" onclick="this.src='/group1/pages/closet/static/img/favorite_black.png' ; addMesage()">
+              <a href="/group1/pages/products/templates/product_michal3.html">
+              <img class="mainPic" src="/group1/pages/closet/static/img/jacket.jpg" alt="jacket" > </a>
+            </div>
+            <p  class="desc" >גקט משבצות &nbsp 80 ש"ח </p>
+          </div>
+        </div>   
+      </div>
+{% endblock %}

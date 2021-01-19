@@ -1,0 +1,90 @@
+{% extends '../../../templates/base.html' %}
+
+{% set page_head_title = 'Wish List' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('cart.static', filename='css/cart.css') }}"/>
+    <script src="{{ url_for('cart.static', filename='js/cart.js') }}"></script>
+{% endblock %}
+
+
+{% block page_body_main_content %}
+    <div class="my-cart">
+                <div class="title"><div class="bg-text">סל הקניות שלי</div></div>
+                
+                <table class="my-products">
+                    <tr>
+                        <th>מחיר כולל</th>
+                        <th>שם הפריט</th>
+                        <th>מוכר</th>
+                        <th>תמונה</th>
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                            ₪100
+                                <button class="del-btn"><img class="del" src="/group1/pages/cart/static/img/delete.png" alt="delete" onclick="addMesage()"></button>
+                            </td>
+                        <td>
+                        <a href="/group1/pages/products/templates/product_michal1.html">אוברול שחור </a>
+                        </td>
+                        <td>Michal Levy</td>
+                        <td> <img  class="prod-pic" src="/group1/pages/closet/static/img/black.jpg" alt="אוברול שחור"/> </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            ₪70
+                            <button class="del-btn"><img class="del" src="/group1/pages/cart/static/img/delete.png" alt="delete" onclick="addMesage()"></button>
+                        </td>
+                        <td>
+                            <a  href="/group1/pages/products/templates/product_roni3.html">טופ ספורט נייק</a>
+                        </td>
+                        
+                        <td>
+                            Roni Rabinovich </td>
+                        <td> <img  class="prod-pic" src="/group1/pages/closet/static/img/טופ1.JPG" alt="טופ ספורט נייק"/> </td>
+                   
+                  
+                    </tr>
+                    <tr>
+                        <td>
+                            
+                            ₪130
+                                <button class="del-btn"><img class="del" src="/group1/pages/cart/static/img/delete.png" alt="delete" onclick="addMesage()"></button>
+                            </td>
+                        <td>
+                        <a href="/group1/pages/products/templates/product_dani3.html">טרנינג נייק </a>
+                        </td>
+                        <td>
+
+                            Danielle Kazantini </td>
+
+                            <td> <img  class="prod-pic" src="/group1/pages/closet/static/img/טרנינג בהיר1.JPG" alt="טרנינג"/> </td>
+                        
+                    </tr>
+
+                </table>
+
+                
+                <table class="total-order">
+
+                        <div class="order">
+                            
+                            <div class="container">
+                                <h4> פרטי הזמנה </h4>
+
+                                <p>אוברול שחור <span class="price">₪100</span></p>
+                                <p>טופ ספורט נייק<span class="price">₪70</span></p>
+                                <p>טרנינג נייק<span class="price">₪130</span></p>
+                                 <hr>
+                                <p>סיכום ביניים <span class="price">₪300</span></p>
+                                <p>סך הנחות ומבצעים<span class="price">₪0</span></p>
+                                <hr>
+                                <p>סך הכל לתשלום <span class="price total" ><b>₪300</b></span></p>
+                            </div>
+                        </div>
+
+                    <a href="/group1/pages/payment/templates/payment.html" ><button class="my-button boutique" type="button" >מעבר לתשלום</button></a>
+                </table>
+    </div>
+{% endblock %}

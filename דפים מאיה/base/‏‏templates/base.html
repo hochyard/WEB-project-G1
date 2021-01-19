@@ -1,0 +1,111 @@
+{#
+Base page variables:
+-- page_lang | default: 'en'
+-- page_head_title_author | default: 'Barak Pinchovski'
+-- page_head_title | default: 'Flask skeleton project'
+#}
+
+{#
+Base page blocks:
+- head
+-- page_head
+-- page_head_meta
+--- page_head_meta_extra
+-- page_head_css
+
+- body
+-- page_body_content
+--- page_body_header
+---- page_body_header_content
+----- page_body_header_content__main_menu
+------ page_body_header_content__main_menu_content
+------- page_body_header_content__main_menu_content_links
+--- page_body_main
+---- page_body_main_content
+--- page_body_footer
+---- page_body_footer_content
+-- page_body_js
+ #}
+<!DOCTYPE html>
+ <html lang="{{ page_lang|default("en", true) }}">
+    <head>
+    {% block page_head %}
+        {# Title #}
+        <title>{{ page_head_title_author|default("B-MINE", true) }} | {{ page_head_title|default('', true) }}</title>
+
+        {# Meta tags #}
+        {% block page_head_meta %}
+            <base href="/"/>
+            <meta charset="UTF-8"/>
+            <meta name="author" content="Group1"/>
+            <meta name="description" content="B-MINE is a second hand site"/>
+            <meta name="keywords" content="C'clair, jewelry, brand, earings, neckless, bracelet, ring"/>
+            {% block page_head_meta_extra %}{% endblock %}
+        {% endblock %}
+
+
+        {# Base #}
+        <base href="/"/>
+
+
+        {% block page_head_css %}{% endblock %}
+    {% endblock %}
+    </head>
+    <body>
+        {% block page_body_content %}
+            {% block page_header %}
+                <header>
+                    {% if session.logged_in %}
+                        <a href="{{ url_for ('wish_list.index') }}"><img src="{{ url_for('static', filename='media/img/favicon/heart.png') }}" alt="Heart" class="heart"></a>
+                        <a href="{{ url_for('logout.index') }}" class="top-line-left">התנתקי</a>
+                        <a href="{{ url_for('profile.index') }}" class="top-line-left">
+                            הפרופיל של {{ session.user['first_name'] }}
+                        </a>
+
+                    {% else %}
+                        <a href="{{ url_for('signUp.index') }}" class="top-line-left">הרשמה</a>
+                        <a href="{{ url_for('login.index') }}" class="top-line-left">התחברי</a>
+                    {% endif %}
+
+                    <a href="/homepage" class="top-line-center"><img src="{{ url_for('static', filename='media/img/general/c_clair_logo.jpg') }}" alt="Logo" height="39" width="170.83"></a>
+                    <a href="tel:+972524442929" class="top-line-right">052-444-2929</a>
+                    <img src="{{ url_for('static', filename='media/img/favicon/phone.png') }}" alt="Telephone" height="18" width="18" class="phone">
+                    <nav>
+                        <a href="/category?id=1" class="navline">עגילים</a>
+                        <a href="/category?id=2" class="navline">שרשראות</a>
+                        <a href="/category?id=3" class="navline">צמידים</a>
+                        <a href="/category?id=4" class="navline">טבעות</a>
+                        <a href="/category?id=5" class="navline">כל התכשיטים</a>
+                    </nav>
+                </header>
+            {% endblock %}
+            {% block page_body_main_content %}
+            {% endblock %}
+            {%  block page_footer %}
+                <footer class="general-footer">
+                    <div class="general-footer-container">
+                        <ul>
+                            <li><b>Follow Us</b></li>
+                            <li><a href="https://www.facebook.com/CCLAIRbyYam/" target="_blank">Facebook</a><img src="{{ url_for('static', filename='media/img/favicon/facebook.png') }}" alt="Facebook" height="20" width="20" class="favicons"></li>
+                            <li><a href="https://www.instagram.com/c_clair_jewelry/" target="_blank">Instagram</a><img src="{{ url_for('static', filename='media/img/favicon/instagram.png') }}" alt="Instagram" height="20" width="20" class="favicons"></li>
+                        </ul>
+                        <ul>
+                            <li><b>שירות לקוחות</b></li>
+                            <li>ימים א' עד ה': 09:00 - 18:00</li>
+                            <li>טלפון: 052-444-2929</li>
+                            <li><a href="mailto:office@cclair.co.il" class="originalLink">office@cclair.co.il</a></li>
+                        </ul>
+                        <ul>
+                            <li><b>Visit Us</b></li>
+                            <li>משה בקר 14, ראשון לציון</li>
+                            <li><a href="{{ url_for('about.index') }}">אודות C'CLAIR</a></li>
+                        </ul>
+                    </div>
+                </footer>
+            {% endblock %}
+            {# JS #}
+            <script src="{{ url_for('static', filename='js/base.js') }}"></script>
+            {% block page_body_js %}{% endblock %}
+        {% endblock %}
+    </body>
+</html>

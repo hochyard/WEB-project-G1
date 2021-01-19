@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% set page_head_title = 'מועדפים' %}
+
+{% block page_head_css %}
+    <link rel="stylesheet" href="{{ url_for('favorites.static', filename='css/favorites.css') }}"/>
+    <link rel="stylesheet" href="{{ url_for('photo_title.static', filename='css/photo_title.css') }}"/>
+    <script src="{{ url_for('favorites.static', filename='js/favorites.js') }}"></script>
+{% endblock %}
+
+
+
+
+
+
+{% block page_body_main_content %}
+        <div class="container">
+            <div class="title"><div class="bg-text">פריטים שנשמרו</div></div>
+            <div class="item">
+                <div class="pic">
+                    <img class="erase" src="/group1/pages/favorites/static/img/delete.JPG" alt="erase" onclick="this.src='/group1/pages/favorites/static/img/delete-black.JPG'; eraseMesage()">
+                    <a href="/group1/pages/products/templates/product_dani2.html">
+                        <img class="mainPic" src="/group1/pages/closet/static/img/גומיה1.JPG" alt="Michal Levy">
+                    </a>
+                </div>
+                <p class="desc">גומיה לשיער &nbsp 10 ש"ח </p>
+            </div>
+
+            <div class="item">
+                <div class="pic">
+                    <img class="erase" src="/group1/pages/favorites/static/img/delete.JPG" alt="erase" onclick="this.src='/group1/pages/favorites/static/img/delete-black.JPG'; eraseMesage()">
+                    <a href="/group1/pages/products/templates/product_michal3.html">
+                        <img class="mainPic" src="/group1/pages/products/static/img/עקב1.jpeg" alt="Michal Levy" >
+                    </a>
+                </div>
+                <p class="desc">נעלי עקב ברונזה&nbsp  60 ש"ח </p>
+            </div>
+
+            <div class="item">
+                <div class="pic">
+                    <img class="erase" src="/group1/pages/favorites/static/img/delete.JPG" alt="erase" onclick="this.src='/group1/pages/favorites/static/img/delete-black.JPG'; eraseMesage()">
+                    <a href="/group1/pages/products/templates/product_michal2.html"><!--להחליף קישור- זמני-->
+                        <img class="mainPic" src="/group1/pages/products/static/img/מגף1.JPG" alt="Michal Levy" >
+                    </a>
+                </div>
+                <p class="desc">מגפון &nbsp 100 ש"ח </p>
+            </div>
+        </div>
+{% endblock %}
